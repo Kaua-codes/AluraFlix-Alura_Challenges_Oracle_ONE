@@ -1,0 +1,95 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Cover",
+      "cor": "#6BD1FF"
+    },
+    {
+      "id": 2,
+      "nome": "Clássico",
+      "cor": "#00C86F"
+    },
+    {
+      "id": 3,
+      "nome": "Pop",
+      "cor": "#FFBA05"
+    }
+  ],
+
+  "videos": [
+    {
+      "id": 1,
+      "categoria": "Pop",
+      "titulo": "Issues - Sara Farell Acoustic Cover",
+      "linkImagem": "https://img.youtube.com/vi/LCTO52FiUtQ/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/LCTO52FiUtQ?playlist=LCTO52FiUtQ&rel=0",
+      "descricao": "Confira a versão acústica de Sara Farell para a música Issues, de Julia Michaels."
+    },
+    {
+      "id": 2,
+      "categoria": "Pop",
+      "titulo": "Stand By Me - Music Travel Love (Cover)",
+      "linkImagem": "https://img.youtube.com/vi/mlBIpwtNxxE/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/mlBIpwtNxxE?playlist=mlBIpwtNxxE&rel=0",
+      "descricao": "Confira Stand By Me na versão de Music Travel Love."
+    },
+
+    {
+      "id": 3,
+      "categoria": "Clássico",
+      "titulo": "Can You Feel The Love Tonight (The Lion King) - Elton John (Boyce Avenue ft. Connie Talbot cover)",
+      "linkImagem": "https://img.youtube.com/vi/1sioip9Uc4o/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/1sioip9Uc4o?playlist=1sioip9Uc4o&rel=0",
+      "descricao": "Confira o clássico de Elton John nas vozes de Boyce Avenue e Connie Talbot."
+    },
+    {
+      "id": 4,
+      "categoria": "Clássico",
+      "titulo": "Your Song - Elton John / Ellie Goulding (Boyce Avenue piano acoustic cover)(Rocketman film)",
+      "linkImagem": "https://img.youtube.com/vi/3j0zzwDRMj0/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/3j0zzwDRMj0?playlist=3j0zzwDRMj0&rel=0",
+      "descricao": "Confira a versão acústica de Your Song feita por Boyce Avenue."
+    },
+    {
+      "id": 5,
+      "categoria": "Cover",
+      "titulo": "Careless Whisper - George Michael (Boyce Avenue acoustic cover)",
+      "linkImagem": "https://img.youtube.com/vi/elV3vDD_K30/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/elV3vDD_K30?playlist=elV3vDD_K30&rel=0",
+      "descricao": "Confira a versão acústica de Careless Whisper feita por Boyce Avenue."
+    },
+    {
+      "id": 6,
+      "categoria": "Pop",
+      "titulo": "Mirrors - Justin Timberlake (Boyce Avenue feat. Fifth Harmony cover)",
+      "linkImagem": "https://img.youtube.com/vi/fvEZUbzqqyM/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/fvEZUbzqqyM?playlist=fvEZUbzqqyM&rel=0",
+      "descricao": "Confira a versão acústica de Mirrors nas vozes de Boice Avenue e Fifth Harmony."
+    },
+    {
+      "id": 7,
+      "categoria": "Clássico",
+      "titulo": "Circle of Life - Elton John (The Lion King / Mufasa)(Boyce Avenue piano acoustic cover)",
+      "linkImagem": "https://img.youtube.com/vi/7GoouSNCVdo/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/7GoouSNCVdo?playlist=7GoouSNCVdo&rel=0",
+      "descricao": "Confira a versão acústica de Circle of Life feita por Boice Avenue."
+    },
+    {
+      "id": 8,
+      "categoria": "Cover",
+      "titulo": "My Heart Will Go On - Celine Dion (Boyce Avenue ft. Connie Talbot piano acoustic cover)",
+      "linkImagem": "https://img.youtube.com/vi/Hvp-EXUc_ww/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/Hvp-EXUc_ww?playlist=Hvp-EXUc_ww&rel=0",
+      "descricao": "Confira a versão acústica de My Heart Will Go On nas vozes de Boice Avenue e Connie Talbot."
+    },
+    {
+      "id": 9,
+      "categoria": "Cover",
+      "titulo": "My Heart Will Go On - Celine Dion (Boyce Avenue ft. Connie Talbot piano acoustic cover)",
+      "linkImagem": "https://img.youtube.com/vi/BpLnOCd8CNA/maxresdefault.jpg",
+      "linkVideo": "https://www.youtube.com/embed/BpLnOCd8CNA?playlist=BpLnOCd8CNA&rel=0",
+      "descricao": "Confira a versão acústica de My Heart Will Go On nas vozes de Boice Avenue e Connie Talbot."
+    }
+  ]
+}
