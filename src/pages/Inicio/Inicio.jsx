@@ -7,7 +7,7 @@ import ModalEditar from "../../components/ModalEditar";
 
 const InicioContainer = styled.main`
   max-width: 1440px;
-  margin: 0px auto 160px;
+  margin: 0px auto;
 
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ const InicioContainer = styled.main`
 `;
 
 const CategoriasContainer = styled.div`
-  padding: 0px 42px;
+  padding: 0px 42px 160px;
   display: flex;
   flex-direction: column;
   gap: 90px;
@@ -33,11 +33,22 @@ const Inicio = () => {
 
   const editarVideo = (id) => {
     console.log("Editando video...");
-    setVideoParaEditar(videos.filter((video) => video.id === id));
+    setVideoParaEditar(videos.find((video) => video.id === id));
   };
 
   const fecharModal = () => {
     setVideoParaEditar(null);
+  };
+
+  const aoVideoAdicionado = (video) => {
+    setVideos([...videos, video]);
+  };
+
+  const aoVideoEditado = (videoEditado) => {
+    const videosAtualizados = videos.map((video) =>
+      video.id === videoEditado.id ? videoEditado : video
+    );
+    setVideos(videosAtualizados);
   };
 
   return (
@@ -64,7 +75,12 @@ const Inicio = () => {
           );
         })}
       </CategoriasContainer>
-      <ModalEditar videoSelecionado={videoParaEditar} aoFechar={fecharModal} />
+      <ModalEditar
+        videoSelecionado={videoParaEditar}
+        categorias={categorias.map((categoria) => categoria.nome)}
+        aoFechar={fecharModal}
+        aoVideoCadastrado={(video) => aoVideoEditado(video)}
+      />
     </InicioContainer>
   );
 };

@@ -11,6 +11,16 @@ const CategoriaEstilizada = styled.section`
 const CardsContainer = styled.div`
   display: flex;
   gap: 30px;
+
+  max-width: 1356px;
+  overflow-x: auto;
+
+  padding-bottom: 40px;
+
+  /* Estilo para navegadores que suportam scrollbar-color */
+  scrollbar-color: #2271d1 transparent; /* thumb background / track background */
+  scrollbar-width: thin; /* Largura fina da barra */
+  scroll-behavior: smooth;
 `;
 
 const Categoria = ({ categoria, videos, aoDeletarVideo, aoEditarVideo }) => {

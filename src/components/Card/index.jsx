@@ -5,14 +5,14 @@ import { Link } from "react-router";
 import { BotaoCardDireita, BotaoCardEsquerda } from "./BotaoCard";
 
 const CardEstilizado = styled.section`
-  width: 430px;
+  width: 400px;
 
   display: flex;
   flex-direction: column;
 `;
 
 const ImagemCard = styled.div`
-  width: 100%;
+  width: 400px;
   aspect-ratio: 16 / 9;
 
   background-image: ${(props) => `url(${props.$backgroundImage})`};
