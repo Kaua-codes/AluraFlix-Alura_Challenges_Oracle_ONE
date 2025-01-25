@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Card from "../components/Card";
+import Card from "@/components/Card";
 import TituloCategoria from "./TituloCategoria";
 
 const CategoriaEstilizada = styled.section`
@@ -23,7 +23,7 @@ const CardsContainer = styled.div`
   scroll-behavior: smooth;
 `;
 
-const Categoria = ({ categoria, videos, aoDeletarVideo, aoEditarVideo }) => {
+const Categoria = ({ categoria, videos }) => {
   return (
     <CategoriaEstilizada>
       <TituloCategoria corDeFundo={categoria.cor}>
@@ -38,8 +38,6 @@ const Categoria = ({ categoria, videos, aoDeletarVideo, aoEditarVideo }) => {
               linkVideo={video.linkVideo}
               video={video}
               cor={categoria.cor}
-              aoDeletarVideo={aoDeletarVideo}
-              aoEditarVideo={aoEditarVideo}
             />
           );
         })}

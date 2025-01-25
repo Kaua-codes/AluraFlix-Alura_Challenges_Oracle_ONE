@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CampoEstilizado = styled.div`
+export const CampoEstilizado = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -21,7 +21,7 @@ const InputEstilizado = styled.input`
   background-color: transparent;
   color: #ffffff;
   padding: 16px 12px;
-  border: 3px solid #2271d1;
+  border: 3px solid ${(props) => props.$corBorda};
   border-radius: 10px;
   outline: none; /* Remove o foco padrão */
 
@@ -36,10 +36,11 @@ const InputEstilizado = styled.input`
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 600;
     font-size: 20px;
+    border-color: ${(props) => props.$corBorda};
     line-height: 24px;
   }
   &:focus {
-    border-color: #6bd1ff;
+    border-color: ${(props) => props.$corBordaFoco};
   }
 `;
 
@@ -47,7 +48,7 @@ const TextAreaEstilizado = styled.textarea`
   background-color: transparent;
   color: #ffffff;
   padding: 16px 12px;
-  border: 3px solid #2271d1;
+  border: 3px solid ${(props) => props.$corBorda};
   border-radius: 10px;
   outline: none; /* Remove o foco padrão */
 
@@ -68,7 +69,7 @@ const TextAreaEstilizado = styled.textarea`
     line-height: 24px;
   }
   &:focus {
-    border-color: #6bd1ff;
+    border-color: ${(props) => props.$corBordaFoco};
   }
 `;
 
@@ -76,7 +77,7 @@ const SelectEstilizado = styled.select`
   background-color: transparent;
   color: #ffffff;
   padding: 16px 12px;
-  border: 3px solid #2271d1;
+  border: 3px solid ${(props) => props.$corBorda};
   border-radius: 10px;
   outline: none; /* Remove o foco padrão */
 
@@ -86,11 +87,11 @@ const SelectEstilizado = styled.select`
   line-height: 24px;
 
   &:focus {
-    border-color: #6bd1ff;
+    border: 3px solid ${(props) => props.$corBordaFoco};
   }
 
   option {
-    background-color: #6bd1ff;
+    background-color: #262626;
   }
 `;
 
@@ -102,10 +103,14 @@ const Campo = ({
   obrigatorio,
   placeholder,
   aoAlterado,
+  corBorda = "#2271D1",
+  corBordaFoco = "#6BD1FF",
 }) => {
   const aoDigitado = (evento) => {
     aoAlterado(evento.target.value);
   };
+
+  console.log(corBordaFoco);
 
   return (
     <CampoEstilizado>
@@ -113,6 +118,8 @@ const Campo = ({
       {tipo === "text-area" ? (
         <TextAreaEstilizado
           value={valor}
+          $corBorda={corBorda}
+          $corBordaFoco={corBordaFoco}
           placeholder={placeholder}
           required={obrigatorio}
           onChange={aoDigitado}
@@ -120,6 +127,8 @@ const Campo = ({
       ) : tipo === "select" ? (
         <SelectEstilizado
           value={valor}
+          $corBorda={corBorda}
+          $corBordaFoco={corBordaFoco}
           required={obrigatorio}
           onChange={aoDigitado}
         >
@@ -131,6 +140,8 @@ const Campo = ({
       ) : (
         <InputEstilizado
           value={valor}
+          $corBorda={corBorda}
+          $corBordaFoco={corBordaFoco}
           type={tipo || "text"}
           placeholder={placeholder}
           required={obrigatorio}

@@ -4,7 +4,7 @@ import Cabecalho from "../../components/Cabecalho";
 import Rodape from "../../components/Rodape";
 
 const Fundo = styled.div`
-  background-color: #262626;
+  background-color: #191919;
   width: 100%;
   min-height: 100vh;
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import iconeFechar from "@/assets/iconeFechar.png";
-import Formulario from "../Formulario";
+import Formulario from "../FormularioCard";
+import { useCardVideoContext } from "../../hooks/useCardVideoContext";
+import FormularioCard from "../FormularioCard";
 
 const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -55,30 +57,27 @@ const ContainerFormulario = styled.div`
   height: 100%;
 `;
 
-const ModalEditar = ({
-  videoSelecionado,
-  categorias,
-  aoFechar,
-  aoVideoCadastrado,
-}) => {
+const ModalEditar = () => {
+  const { videoParaEditar, fecharModal } = useCardVideoContext();
+  const videoSelecionado = videoParaEditar;
+
   return (
     <>
       {videoSelecionado && (
         <>
           <Overlay />
-          <DialogEstilizado open={!!videoSelecionado} onClose={aoFechar}>
+          <DialogEstilizado open={!!videoSelecionado} onClose={fecharModal}>
             <form method="dialog">
               <ButtonCloseModal formMethod="dialog">
                 <img src={iconeFechar} />
               </ButtonCloseModal>
             </form>
             <ContainerFormulario>
-              <Formulario
+              <FormularioCard
+                type="editar"
                 tituloFormulario="EDITAR CARD:"
-                categorias={categorias}
                 videoSelecionado={videoSelecionado}
-                aoVideoCadastrado={aoVideoCadastrado}
-                fecharModal={aoFechar}
+                fecharModal={fecharModal}
               />
             </ContainerFormulario>
           </DialogEstilizado>

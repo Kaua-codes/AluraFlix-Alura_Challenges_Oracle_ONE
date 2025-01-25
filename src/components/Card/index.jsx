@@ -3,6 +3,7 @@ import iconeLapis from "@/assets/iconeLapis.svg";
 import styled from "styled-components";
 import { Link } from "react-router";
 import { BotaoCardDireita, BotaoCardEsquerda } from "./BotaoCard";
+import { useCardVideoContext } from "../../hooks/useCardVideoContext";
 
 const CardEstilizado = styled.section`
   width: 400px;
@@ -45,7 +46,9 @@ const CardRodape = styled.footer`
   box-sizing: border-box;
 `;
 
-const Card = ({ video, cor, aoDeletarVideo, aoEditarVideo }) => {
+const Card = ({ video, cor }) => {
+  const { deletarVideo, editarVideo } = useCardVideoContext();
+
   return (
     <CardEstilizado>
       <Link to={video.linkVideo}>
@@ -56,7 +59,7 @@ const Card = ({ video, cor, aoDeletarVideo, aoEditarVideo }) => {
           cor={cor}
           icone={iconeLixeira}
           idVideo={video.id}
-          aoClicar={aoDeletarVideo}
+          aoClicar={deletarVideo}
         >
           DELETAR
         </BotaoCardEsquerda>
@@ -64,7 +67,7 @@ const Card = ({ video, cor, aoDeletarVideo, aoEditarVideo }) => {
           cor={cor}
           icone={iconeLapis}
           idVideo={video.id}
-          aoClicar={aoEditarVideo}
+          aoClicar={editarVideo}
         >
           EDITAR
         </BotaoCardDireita>

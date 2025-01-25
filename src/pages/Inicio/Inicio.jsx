@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import Banner from "../../components/Banner";
-import Categoria from "../../Categoria";
-import { useState } from "react";
-import Api from "@/mocks/db.json";
+import Categoria from "../../components/Categoria";
 import ModalEditar from "../../components/ModalEditar";
+import { useCardVideoContext } from "../../hooks/useCardVideoContext";
 
 const InicioContainer = styled.main`
   max-width: 1440px;
@@ -22,34 +21,7 @@ const CategoriasContainer = styled.div`
 `;
 
 const Inicio = () => {
-  const [videos, setVideos] = useState(Api.videos);
-  const [categorias, setCategorias] = useState(Api.categorias);
-  const [videoParaEditar, setVideoParaEditar] = useState(null);
-
-  const deletarVideo = (id) => {
-    console.log("Deletando video...");
-    setVideos(videos.filter((video) => video.id !== id));
-  };
-
-  const editarVideo = (id) => {
-    console.log("Editando video...");
-    setVideoParaEditar(videos.find((video) => video.id === id));
-  };
-
-  const fecharModal = () => {
-    setVideoParaEditar(null);
-  };
-
-  const aoVideoAdicionado = (video) => {
-    setVideos([...videos, video]);
-  };
-
-  const aoVideoEditado = (videoEditado) => {
-    const videosAtualizados = videos.map((video) =>
-      video.id === videoEditado.id ? videoEditado : video
-    );
-    setVideos(videosAtualizados);
-  };
+  const { videos, categorias } = useCardVideoContext();
 
   return (
     <InicioContainer>
@@ -60,6 +32,7 @@ const Inicio = () => {
         linkVideo="https://www.youtube.com/embed/LCTO52FiUtQ?playlist=LCTO52FiUtQ&rel=0"
         descricao="Confira a versão acústica de Sara Farell para a música Issues, de Julia Michaels."
       />
+
       <CategoriasContainer>
         {categorias.map((categoria) => {
           return (
@@ -69,18 +42,12 @@ const Inicio = () => {
               videos={videos.filter((video) => {
                 return video.categoria === categoria.nome;
               })}
-              aoDeletarVideo={deletarVideo}
-              aoEditarVideo={editarVideo}
             />
           );
         })}
       </CategoriasContainer>
-      <ModalEditar
-        videoSelecionado={videoParaEditar}
-        categorias={categorias.map((categoria) => categoria.nome)}
-        aoFechar={fecharModal}
-        aoVideoCadastrado={(video) => aoVideoEditado(video)}
-      />
+
+      <ModalEditar />
     </InicioContainer>
   );
 };
